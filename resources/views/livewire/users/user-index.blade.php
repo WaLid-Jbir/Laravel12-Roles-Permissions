@@ -3,17 +3,28 @@
         <flux:heading size="xl" level="1">{{ __('Users') }}</flux:heading>
         <flux:subheading size="lg" class="mb-6">{{ __('Manage all your users') }}</flux:subheading>
         <flux:separator variant="subtle" />
+
+        @session('success')
+            <div class="flex items-center p-2 mb-4 text-sm text-green-800 rounded-lg bg-green-500 dark:bg-gray-800 dark:text-green-400" role="alert">
+                <div class="flex gap-2">
+                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="font-medium">{{ $value }}</span>
+                </div>
+            </div>
+        @endsession
         
         <!-- Create button aligned to the right -->
         <div class="flex justify-start mt-4">
-            <button class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-blue-500 hover:bg-blue-600">
+            <a href="{{ route('users.create') }}" class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-blue-500 hover:bg-blue-600">
                 Create User
-            </button>
+            </a>
         </div>
     </div>
 
     <div class="overflow-x-auto">
-        <table class="table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="w-1/12 px-6 py-3">ID</th>
@@ -24,10 +35,10 @@
             </thead>
             <tbody>
                 <tr class="odd:bg-white odd:dark:bg-gray-800 even:bg-gray-50 even:dark:bg-gray-700">
-                    <td class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">1</td>
-                    <td class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">John Doe</td>
-                    <td class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">john@example.com</td>
-                    <td class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <td class="w-1/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">1</td>
+                    <td class="w-3/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">John Doe</td>
+                    <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">john@example.com</td>
+                    <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         <button class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-green-500 hover:bg-green-600 mr-2">
                             Edit
                         </button>
