@@ -34,19 +34,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="odd:bg-white odd:dark:bg-gray-800 even:bg-gray-50 even:dark:bg-gray-700">
-                    <td class="w-1/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">1</td>
-                    <td class="w-3/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">John Doe</td>
-                    <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">john@example.com</td>
-                    <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <button class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-green-500 hover:bg-green-600 mr-2">
-                            Edit
-                        </button>
-                        <button class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-red-500 hover:bg-red-600">
-                            Delete
-                        </button>
-                    </td>
-                </tr>
+                @foreach ($users as $user)
+                    <tr class="odd:bg-white odd:dark:bg-gray-800 even:bg-gray-50 even:dark:bg-gray-700">
+                        <td class="w-1/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $user->id }}</td>
+                        <td class="w-3/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $user->name }}</td>
+                        <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $user->email }}</td>
+                        <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <button class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-green-500 hover:bg-green-600 mr-2">
+                                Edit
+                            </button>
+                            <button class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-red-500 hover:bg-red-600">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
