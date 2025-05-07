@@ -43,7 +43,7 @@
                             <a href="{{ route('users.edit', $user->id) }}" class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-green-500 hover:bg-green-600 mr-2">
                                 Edit
                             </a>
-                            <a class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-red-500 hover:bg-red-600">
+                            <a wire:click="delete({{ $user->id }})" wire:confirm="Are you sure you want to delete?" class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-red-500 hover:bg-red-600">
                                 Delete
                             </a>
                         </td>

@@ -12,4 +12,10 @@ class UserIndex extends Component
         $users = User::all();
         return view('livewire.users.user-index', compact('users'));
     }
+
+    public function delete($id){
+        $user = User::find($id);
+        $user->delete();
+        return to_route('users.index')->with("success", "User deleted successfully.");
+    }
 }
