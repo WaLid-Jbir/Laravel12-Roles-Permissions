@@ -39,7 +39,10 @@
                         <td class="w-1/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $user->id }}</td>
                         <td class="w-3/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $user->name }}</td>
                         <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ $user->email }}</td>
-                        <td class="w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="flex justify-center gap-2 w-4/12 px-6 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <a href="{{ route('users.show', $user->id) }}" class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-amber-500 hover:bg-amber-600 mr-2">
+                                Show
+                            </a>
                             <a href="{{ route('users.edit', $user->id) }}" class="cursor-pointer rounded-md px-3 py-2 text-xs font-medium text-white bg-green-500 hover:bg-green-600 mr-2">
                                 Edit
                             </a>
