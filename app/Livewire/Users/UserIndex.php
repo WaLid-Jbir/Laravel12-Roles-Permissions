@@ -16,6 +16,7 @@ class UserIndex extends Component
     public function delete($id){
         $user = User::find($id);
         $user->delete();
-        return to_route('users.index')->with("success", "User deleted successfully.");
+
+        session()->flash("success", "User deleted successfully.");
     }
 }
